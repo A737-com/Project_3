@@ -1,4 +1,4 @@
-# Project 2: Personal Portfolio Website (with CSS)
+# Project 3: Personal Portfolio Website (with CSS and maps)
 
 ## Author
 **Archit Singh**  

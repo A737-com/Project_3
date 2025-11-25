@@ -1,17 +1,5 @@
-/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* Reset list style and center navigation */
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-}
-
-/* General body styling */
 body {
   font-family: 'Roboto', Arial, sans-serif;
   line-height: 1.6;
@@ -21,7 +9,6 @@ body {
   color: #333;
 }
 
-/* Header */
 header {
   background-color: #4CAF50;
   color: white;
@@ -29,7 +16,15 @@ header {
   text-align: center;
 }
 
-/* Navigation links */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
 nav a {
   text-decoration: none;
   color: white;
@@ -40,7 +35,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Page wrapper */
 #page-wrapper {
   max-width: 960px;
   margin: 2rem auto;
@@ -50,33 +44,35 @@ nav a:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Sections */
-section {
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  border-radius: 8px;
+section { margin-bottom: 1.5rem; padding: 1rem; border-radius: 8px; }
+
+img, video { max-width: 100%; height: auto; display: block; margin-top: 0.5rem; }
+
+footer { text-align: center; padding: 1rem 0; background-color: #333; color: white; }
+
+@media screen and (min-width: 600px) {
+  body { font-size: 18px; }
+  nav ul { flex-direction: row; justify-content: space-around; }
+  #page-wrapper { padding: 2rem; }
+  img { width: 80%; }
 }
 
-/* Featured image */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-top: 0.5rem;
+@media screen and (min-width: 900px) {
+  body { font-size: 20px; }
+  nav ul { justify-content: space-between; gap: 3em; }
+  #page-wrapper { max-width: 1200px; padding: 3rem; }
+  img { width: 100%; }
 }
 
-/* Video styling */
-video {
-  display: block;
-  margin-top: 0.5rem;
-  max-width: 100%;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem 0;
-  background-color: #333;
+button#questionBtn, button#locateBtn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #4CAF50;
   color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 1rem 0.5rem 1rem 0;
 }
 
+button#questionBtn:hover, button#locateBtn:hover { background-color: #45a049; }
