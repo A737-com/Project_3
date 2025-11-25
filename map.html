@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project 3 — Map Page</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Map Page</h1>
+      <nav>
+        <ul class="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="page2.html">Page 2</a></li>
+          <li><a href="page3.html">Page 3</a></li>
+          <li><a href="map.html">Map Page</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container map-page">
+    <h2>Our Locations</h2>
+    <div id="map" style="height:500px; width:100%;"></div>
+
+    <div class="map-controls">
+      <button id="locateBtn" class="btn">Center on My Location</button>
+      <p>Click on map to add a marker. Click existing markers to see info windows.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year-map"></span> My Project 3</p>
+    </div>
+  </footer>
+
+  <!-- Google Maps JS (use the key provided by the instructor). The callback will call initMap defined in script.js -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM1F-BpX660SBK3-Vw9O9f7AEvTAIH8rI&callback=initMap"></script>
+</body>
+</html>
