@@ -1,17 +1,8 @@
-/* ---------- Basic DOM-safe operations ---------- */
-function safeGet(id) {
-  return document.getElementById(id);
-}
+/* ---------- DOM-safe function ---------- */
+function safeGet(id) { return document.getElementById(id); }
 
-/* Questions button alert - shows email */
+/* ---------- Questions Button ---------- */
 document.addEventListener('DOMContentLoaded', function () {
-  const y = new Date().getFullYear();
-  const yearIds = ['year','year-2','year-3','year-map'];
-  yearIds.forEach(id => {
-    const el = safeGet(id);
-    if (el) el.textContent = y;
-  });
-
   const qBtn = safeGet('questionBtn');
   if (qBtn) {
     qBtn.addEventListener('click', function () {
@@ -20,30 +11,28 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   const locateBtn = safeGet('locateBtn');
-  if (locateBtn && window.map && navigator.geolocation) {
+  if (locateBtn) {
     locateBtn.addEventListener('click', function () {
-      navigator.geolocation.getCurrentPosition(function (pos) {
-        const latLng = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-        window.map.setCenter(latLng);
-        window.map.setZoom(14);
-        new google.maps.Marker({ position: latLng, map: window.map, title: "You are here" });
-      }, function (err) {
-        alert("Could not get your location: " + (err.message || "permission denied"));
-      });
+      if (window.map && navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (pos) {
+          const latLng = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+          window.map.setCenter(latLng);
+          window.map.setZoom(14);
+          new google.maps.Marker({ position: latLng, map: window.map, title: "You are here" });
+        }, function (err) {
+          alert("Could not get your location: " + (err.message || "permission denied"));
+        });
+      } else {
+        alert("Geolocation not supported or the map is not ready.");
+      }
     });
   }
 });
 
-/* ---------- Google Maps initMap ---------- */
+/* ---------- Google Maps ---------- */
 function initMap() {
-  const center = { lat: 41.8781, lng: -87.6298 };
-  const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 10,
-    center: center,
-    mapTypeControl: true,
-    streetViewControl: false
-  });
-
+  const center = { lat: 41.8781, lng: -87.6298 }; // Chicago
+  const map = new google.maps.Map(document.getElementById('map'), { zoom: 10, center, mapTypeControl: true, streetViewControl: false });
   window.map = map;
 
   const places = [
@@ -53,31 +42,19 @@ function initMap() {
   ];
 
   const infoWindow = new google.maps.InfoWindow();
-
   places.forEach(p => {
-    const marker = new google.maps.Marker({
-      position: p.position,
-      map: map,
-      title: p.title
-    });
-
-    marker.addListener('click', function () {
+    const marker = new google.maps.Marker({ position: p.position, map, title: p.title });
+    marker.addListener('click', () => {
       infoWindow.setContent('<div><strong>' + p.title + '</strong><p>' + p.content + '</p></div>');
       infoWindow.open(map, marker);
     });
   });
 
+  // Click-to-add marker
   map.addListener('click', function (e) {
     const clickedPos = { lat: e.latLng.lat(), lng: e.latLng.lng() };
-    const newMarker = new google.maps.Marker({
-      position: clickedPos,
-      map: map,
-      title: "Custom marker"
-    });
-    const latLngString = 'Lat: ' + clickedPos.lat.toFixed(6) + ', Lng: ' + clickedPos.lng.toFixed(6);
-    const clickInfo = new google.maps.InfoWindow({
-      content: '<div><strong>New marker</strong><p>' + latLngString + '</p></div>'
-    });
+    const newMarker = new google.maps.Marker({ position: clickedPos, map, title: "Custom marker" });
+    const clickInfo = new google.maps.InfoWindow({ content: `<div><strong>New marker</strong><p>Lat: ${clickedPos.lat.toFixed(6)}, Lng: ${clickedPos.lng.toFixed(6)}</p></div>` });
     clickInfo.open(map, newMarker);
   });
 }
