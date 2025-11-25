@@ -1,5 +1,7 @@
+/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* General body styling */
 body {
   font-family: 'Roboto', Arial, sans-serif;
   line-height: 1.6;
@@ -9,6 +11,7 @@ body {
   color: #333;
 }
 
+/* Header */
 header {
   background-color: #4CAF50;
   color: white;
@@ -16,13 +19,21 @@ header {
   text-align: center;
 }
 
+/* Navigation bar same as Project 2 */
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   justify-content: center;
-  gap: 2em;
+}
+
+nav ul li {
+  margin-right: 15px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
 }
 
 nav a {
@@ -35,6 +46,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Page wrapper */
 #page-wrapper {
   max-width: 960px;
   margin: 2rem auto;
@@ -44,35 +56,56 @@ nav a:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-section { margin-bottom: 1.5rem; padding: 1rem; border-radius: 8px; }
-
-img, video { max-width: 100%; height: auto; display: block; margin-top: 0.5rem; }
-
-footer { text-align: center; padding: 1rem 0; background-color: #333; color: white; }
-
-@media screen and (min-width: 600px) {
-  body { font-size: 18px; }
-  nav ul { flex-direction: row; justify-content: space-around; }
-  #page-wrapper { padding: 2rem; }
-  img { width: 80%; }
+/* Sections */
+section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
-@media screen and (min-width: 900px) {
-  body { font-size: 20px; }
-  nav ul { justify-content: space-between; gap: 3em; }
-  #page-wrapper { max-width: 1200px; padding: 3rem; }
-  img { width: 100%; }
+/* Featured images - same size as Project 2 */
+img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 0.5rem;
 }
 
-button#questionBtn, button#locateBtn {
+/* Video styling */
+video {
+  display: block;
+  margin-top: 0.5rem;
+  max-width: 100%;
+}
+
+/* Questions button */
+#questionBtn {
+  display: inline-block;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
-  background-color: #4CAF50;
+  margin-bottom: 1rem;
+  background-color: #ff9800;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
-  margin: 1rem 0.5rem 1rem 0;
 }
 
-button#questionBtn:hover, button#locateBtn:hover { background-color: #45a049; }
+#questionBtn:hover {
+  background-color: #e68a00;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #333;
+  color: white;
+}
+
+/* Map container */
+#map {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+}
