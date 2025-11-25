@@ -1,7 +1,5 @@
-/* ---------- DOM-safe function ---------- */
 function safeGet(id) { return document.getElementById(id); }
 
-/* ---------- Questions Button ---------- */
 document.addEventListener('DOMContentLoaded', function () {
   const qBtn = safeGet('questionBtn');
   if (qBtn) {
@@ -29,9 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-/* ---------- Google Maps ---------- */
 function initMap() {
-  const center = { lat: 41.8781, lng: -87.6298 }; // Chicago
+  const center = { lat: 41.8781, lng: -87.6298 };
   const map = new google.maps.Map(document.getElementById('map'), { zoom: 10, center, mapTypeControl: true, streetViewControl: false });
   window.map = map;
 
@@ -50,7 +47,6 @@ function initMap() {
     });
   });
 
-  // Click-to-add marker
   map.addListener('click', function (e) {
     const clickedPos = { lat: e.latLng.lat(), lng: e.latLng.lng() };
     const newMarker = new google.maps.Marker({ position: clickedPos, map, title: "Custom marker" });

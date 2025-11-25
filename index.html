@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="js/script.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <h1>Welcome to My Home Page</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="page2.html">Page 2</a></li>
-          <li><a href="page3.html">Photo Page</a></li>
-          <li><a href="map.html">Map Page</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Page</title>
+<link rel="stylesheet" href="style.css">
+<script src="js/script.js" defer></script>
+</head>
+<body>
+<header>
+  <h1>Welcome to My Home Page</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="page3.html">Photo Page</a></li>
+      <li><a href="map.html">Map Page</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <div id="page-wrapper">
-      <button id="questionBtn">Questions</button>
+<div id="page-wrapper">
+  <section>
+    <h2>About This Project</h2>
+    <p>This website is part of my Project 3 for the web development course. It includes Home, Resume, Photo Page, and Map Page. The purpose is to demonstrate clean, valid HTML, CSS, and JavaScript integration.</p>
+  </section>
 
-      <section>
-        <h2>About This Project</h2>
-        <p>This website is part of my Project 1 for the web development course. It includes three pages: this home page, my professional resume, and one additional page about a topic I enjoy. The purpose of this project is to demonstrate the use of clean, valid HTML and CSS styling.</p>
-      </section>
+  <section>
+    <h2>My Interests</h2>
+    <ul>
+      <li>Technology and Web Development</li>
+      <li>Business and Entrepreneurship</li>
+      <li>Sports and Fitness</li>
+    </ul>
+  </section>
 
-      <section>
-        <h2>My Interests</h2>
-        <ul>
-          <li>Technology and Web Development</li>
-          <li>Business and Entrepreneurship</li>
-          <li>Sports and Fitness</li>
-        </ul>
-      </section>
+  <section>
+    <h2>Featured Image</h2>
+    <img src="images/pexels-ron-lach-8036332.jpg" alt="Person learning on computer">
+  </section>
 
-      <section>
-        <h2>Featured Image</h2>
-        <p>The image below represents my passion for learning and creating new projects using technology.</p>
-        <img src="images/pexels-ron-lach-8036332.jpg" alt="Person learning on computer">
-      </section>
+  <section>
+    <h2>Introductory Video</h2>
+    <video controls>
+      <source src="images/3129977-uhd_3840_2160_30fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+</div>
 
-      <section>
-        <h2>Introductory Video</h2>
-        <p>Here is a short video related to technology and creativity.</p>
-        <video controls>
-          <source src="images/3129977-uhd_3840_2160_30fps.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </section>
-    </div>
-
-    <footer>
-      <p>&copy; <span id="year"></span> My Website</p>
-    </footer>
-  </body>
+<footer>
+  <p>&copy; <span id="year"></span> My Website</p>
+</footer>
+</body>
 </html>

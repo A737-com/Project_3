@@ -1,7 +1,5 @@
-/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* ---------- Reset & General Styling ---------- */
 body {
   font-family: 'Roboto', Arial, sans-serif;
   line-height: 1.6;
@@ -11,13 +9,8 @@ body {
   color: #333;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+ul { list-style: none; padding: 0; margin: 0; }
 
-/* ---------- Header & Navigation ---------- */
 header {
   background-color: #4CAF50;
   color: white;
@@ -41,7 +34,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* ---------- Page Wrapper & Sections ---------- */
 #page-wrapper {
   max-width: 960px;
   margin: 2rem auto;
@@ -51,22 +43,11 @@ nav a:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-section {
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  border-radius: 8px;
-}
+section { margin-bottom: 1.5rem; padding: 1rem; border-radius: 8px; }
 
-/* ---------- Images & Videos ---------- */
-img, video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-top: 0.5rem;
-}
+img, video { max-width: 100%; height: auto; display: block; margin-top: 0.5rem; }
 
-/* ---------- Questions Button ---------- */
-#questionBtn {
+#questionBtn, #locateBtn {
   display: inline-block;
   margin-bottom: 1rem;
   padding: 0.5rem 1rem;
@@ -78,11 +59,8 @@ img, video {
   font-weight: bold;
 }
 
-#questionBtn:hover {
-  background-color: #45a049;
-}
+#questionBtn:hover, #locateBtn:hover { background-color: #45a049; }
 
-/* ---------- Footer ---------- */
 footer {
   text-align: center;
   padding: 1rem 0;
@@ -90,15 +68,9 @@ footer {
   color: white;
 }
 
-/* ---------- Map Div ---------- */
-#map {
-  width: 100%;
-  height: 500px;
-  border-radius: 12px;
-  margin-top: 1rem;
-}
+#map { width: 100%; height: 500px; border-radius: 12px; margin-top: 1rem; }
 
-/* ---------- Media Queries ---------- */
+/* Media Queries */
 @media (max-width: 768px) {
   body { font-size: 16px; }
   nav ul { flex-direction: column; gap: 1em; }
